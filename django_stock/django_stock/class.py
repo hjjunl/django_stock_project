@@ -5,6 +5,9 @@ import pandas as pd
 import numpy as np
 from IPython.display import display
 import datetime
+import schedule
+import time
+from sqlalchemy import create_engine
 
 # 한국 주식 전체 정보 -> 매달 1번씩 저장
 stocks = fdr.StockListing('KRX') # 코스피, 코스닥, 코넥스 전체
@@ -35,3 +38,4 @@ class financial_report:
         # elif DB에 코드가 있다면 신규 날짜에 맞춰 업로드
         
         return stock_df, stk_info, stk_finance, stk_cashflow
+    
